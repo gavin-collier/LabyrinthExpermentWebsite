@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Project</title>
+    <link rel="stylesheet" href="/styles/admin.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+</head>
+
+<body>
+    <script src="adminCommands.js"></script>
+    <h1>Experment Admin Panel</h1>
+    <div id="admin-pwd-div">
+        <label for="pwd">Admin Password:</label>
+        <input type="password" id="pwd" name="pwd"><br><br>
+    </div>
+    <div id="user-add-div">
+        <h3>Add User to Experment</h3>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit" onclick="createNewUser()">
+    </div>
+</body>
+
+</html>

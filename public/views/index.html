@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Project</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+</head>
+
+<body>
+    <script src="login.js"></script>
+    <h1>A. Dunn Labyrinth Experment</h1>
+    <div id="login-div">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit" onclick="login()">
+    </div>
+    <script src="timer.js"></script>
+    <div id="timer-div">
+        <h1>Timer</h1>
+        <p>Current User: </p>
+        <label id="username"></label>
+        <div id="timer">00:00.00</div>
+        <div id="timer-button-div">
+            <button type="button" id="timer-button" onclick="timerPress()">Start Timer</button>
+        </div>
+    </div>
+</body>
+
+</html>
