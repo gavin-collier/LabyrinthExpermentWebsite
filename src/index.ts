@@ -58,7 +58,7 @@ app.get('/admin', basicAuthMiddleware, (req, res) => {
 });
 
 //start the server
-var server = https.createServer(app).listen(port, async function () {
+var server = http.createServer(app).listen(port, async function () {
     await mongoose.connect(uri);
     console.log("Server started on " + port);
 });
