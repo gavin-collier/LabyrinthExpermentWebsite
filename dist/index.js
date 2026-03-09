@@ -61,7 +61,7 @@ app.get('/admin', basicAuthMiddleware, (req, res) => {
     res.sendFile(reqPath + "/views/admin.html");
 });
 //start the server
-var server = https.createServer(app).listen(port, function () {
+var server = http.createServer(app).listen(port, function () {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoose_1.default.connect(uri);
         console.log("Server started on " + port);
