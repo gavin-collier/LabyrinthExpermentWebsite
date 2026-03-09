@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo \"TEST\"",
     "build": "npx tsc",
     "start": "node dist/index.js"
   },

@@ -15,7 +15,7 @@ const timeRouts = require('./timeRouts');
 const adminRouts = require('./adminRouts');
 require('dotenv').config();
 
-const port = 3000;
+const port = 8080;
 const app = express();
 
 //get encoded .env values
