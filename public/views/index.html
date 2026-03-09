@@ -11,19 +11,24 @@
 
 <body>
     <script src="login.js"></script>
-    <h1>A. Dunn Labyrinth Experment</h1>
-    <div id="login-div">
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname"><br><br>
-        <input type="submit" value="Submit" onclick="login()">
+    <div class="title-div">
+        <h1>A. Dunn Labyrinth Experment</h1>
+    </div>
+    <div class="login-div">
+        <div class="login-content">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Sign In" onclick="login()">
+        </div>
     </div>
     <script src="timer.js"></script>
-    <div id="timer-div">
-        <h1>Timer</h1>
-        <p>Current User: </p>
-        <label id="username"></label>
+    <div class="timer-div">
+        <div class="user-info">
+            <p>Current User: </p>
+            <label id="username">none</label>
+        </div>
         <div id="timer">00:00.00</div>
         <div id="timer-button-div">
             <button type="button" id="timer-button" onclick="timerPress()">Start Timer</button>

@@ -16,8 +16,10 @@ function timerPress() {
         clearInterval(timer);
         timerRunning = false;
         timerButton.innerHTML = "New Timer"
+        timerButton.style.background = "#1b5bc1";
     } else {
         timerRunning = true;
+        timerButton.style.background = "#ed0000";
         timerButton.innerHTML = "Stop Timer"
         startTime = Date.now(); // set the start time
         timer = setInterval(() => {

@@ -13,8 +13,11 @@ async function login() {
         });
 
         const data = await responce.json();
+        if (data.user.id) {
+            document.getElementsByClassName("login-div")[0].style.display = "none";
+        }
         console.log(data);
-        username.innerHTML = data.user.id;
+        username.innerHTML = data.user.firstname;
     } catch (error) {
         console.error(error);
     }
@@ -32,7 +35,10 @@ async function checkSession() {
         const data = await responce.json();
 
         console.log(data);
-        username.innerHTML = data.user.id;
+        username.innerHTML = data.user.firstname;
+        if (data.user.id) {
+            document.getElementsByClassName("login-div")[0].style.display = "none";
+        }
     } catch (error) {
         console.error(error);
     } 

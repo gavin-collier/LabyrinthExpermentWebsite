@@ -6,7 +6,6 @@ const { MongoClient, ServerApiVersion } = require('mongodb'); //FOR TEST
 import mongoose from 'mongoose';
 
 const http = require('http');
-const https = require('https');
 
 //get local files to use
 const user = require("./model/user");
