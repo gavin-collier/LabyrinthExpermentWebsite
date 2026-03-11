@@ -53,6 +53,17 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
+        
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo "DB_IP=${{ secrets.DB_IP }}" >> .env
+          echo "DB_USER=${{ secrets.DB_USER }}" >> .env
+          echo "DB_PASS=${{ secrets.DB_PASS }}" >> .env
+          echo "SESSION_SECRET=${{ secrets.SESSION_SECRET }}" >> .env
+          echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> .env
+          echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
