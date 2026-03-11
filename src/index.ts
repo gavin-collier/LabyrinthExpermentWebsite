@@ -100,7 +100,8 @@ function basicAuthMiddleware(req, res, next) {
     if (usernameProvided === ADMIN_USERNAME && passwordProvided === ADMIN_API_KEY) {
         return next();
     } else {
-        console.log("Invalid Login\nUsername: " + usernameProvided + "\nPassword: " + passwordProvided);
+        console.log("Invalid Login\nProvided Username: " + usernameProvided + "\nProvided  Password: " + passwordProvided);
+        console.log("Correct Login\\ Username: " + ADMIN_USERNAME + "\nPassword: " + ADMIN_API_KEY);
     }
 
     res.setHeader('WWW-Authenticate', 'Basic realm="Admin Area"');
