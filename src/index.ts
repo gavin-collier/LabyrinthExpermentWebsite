@@ -99,6 +99,8 @@ function basicAuthMiddleware(req, res, next) {
     //Check username and password aginst .env
     if (usernameProvided === ADMIN_USERNAME && passwordProvided === ADMIN_API_KEY) {
         return next();
+    } else {
+        console.log("Invalid Login\nUsername: " + usernameProvided + "\nPassword: " + passwordProvided);
     }
 
     res.setHeader('WWW-Authenticate', 'Basic realm="Admin Area"');

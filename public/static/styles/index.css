@@ -210,6 +210,14 @@ grid-row: 2 / 3;
 
 /* Small screens: stack vertically */
 @media (max-width: 420px) {
+    .title-div {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
     .timer-div {
         grid-template-columns: 1fr;
     }
