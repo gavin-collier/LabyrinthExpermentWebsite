@@ -81,7 +81,10 @@ function basicAuthMiddleware(req, res, next) {
 
     let creds;
     try {
-        creds = Buffer.from(parts[1], 'base64').toString();
+        const token = parts[1];
+        const hasPercentEncoding = /%[0-9A-Fa-f]{2}/.test(token);
+        const normalized = hasPercentEncoding ? decodeURIComponent(token) : token;
+        creds = Buffer.from(normalized, 'base64').toString('utf8');
     } catch (e) {
         res.setHeader('WWW-Authenticate', 'Basic realm="Admin Area"');
         return res.status(401).send('Invalid base64 credentials');

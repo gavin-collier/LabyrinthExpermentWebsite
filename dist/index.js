@@ -19,7 +19,6 @@ const connect_mongo_1 = __importDefault(require("connect-mongo"));
 const { MongoClient, ServerApiVersion } = require('mongodb'); //FOR TEST
 const mongoose_1 = __importDefault(require("mongoose"));
 const http = require('http');
-const https = require('https');
 //get local files to use
 const user = require("./model/user");
 const loginRouts = require('./loginRouts');
@@ -83,7 +82,10 @@ function basicAuthMiddleware(req, res, next) {
     }
     let creds;
     try {
-        creds = Buffer.from(parts[1], 'base64').toString();
+        const token = parts[1];
+        const hasPercentEncoding = /%[0-9A-Fa-f]{2}/.test(token);
+        const normalized = hasPercentEncoding ? decodeURIComponent(token) : token;
+        creds = Buffer.from(normalized, 'base64').toString('utf8');
     }
     catch (e) {
         res.setHeader('WWW-Authenticate', 'Basic realm="Admin Area"');
@@ -99,6 +101,9 @@ function basicAuthMiddleware(req, res, next) {
     //Check username and password aginst .env
     if (usernameProvided === ADMIN_USERNAME && passwordProvided === ADMIN_API_KEY) {
         return next();
+    }
+    else {
+        console.log("Invalid Login\nProvided Username: " + usernameProvided + "\nProvided  Password: " + passwordProvided);
     }
     res.setHeader('WWW-Authenticate', 'Basic realm="Admin Area"');
     return res.status(401).send('Invalid credentials');
